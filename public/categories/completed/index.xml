@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Completed on The Logbook</title>
+		<link>//localhost:1313/categories/completed/</link>
+		<description>Recent content in Completed on The Logbook</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 16 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/categories/completed/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Custom Compiler-VM Bundle</title>
+				<link>//localhost:1313/projects/compiler-vm/</link>
+				<pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/compiler-vm/</guid>
+				<description>This project page looks at some of the technical details regarding my implementation of a custom compiler and a VM for a simple, custom ISA. The project is built in C and the vm follows a von Neumann Architecture and is register based.</description>
+			</item>
+	</channel>
+</rss>

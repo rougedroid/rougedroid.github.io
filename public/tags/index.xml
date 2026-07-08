@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on The Logbook</title>
+		<link>//localhost:1313/tags/</link>
+		<description>Recent content in Tags on The Logbook</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 16 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>C</title>
+				<link>//localhost:1313/tags/c/</link>
+				<pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/c/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Compiler</title>
+				<link>//localhost:1313/tags/compiler/</link>
+				<pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/compiler/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Low-Level</title>
+				<link>//localhost:1313/tags/low-level/</link>
+				<pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/low-level/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>AST</title>
+				<link>//localhost:1313/tags/ast/</link>
+				<pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/ast/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Agentic-Workflows</title>
+				<link>//localhost:1313/tags/agentic-workflows/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/agentic-workflows/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>AI-ML</title>
+				<link>//localhost:1313/tags/ai-ml/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/ai-ml/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dataprocessing</title>
+				<link>//localhost:1313/tags/dataprocessing/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/dataprocessing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Graphdatabase</title>
+				<link>//localhost:1313/tags/graphdatabase/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/graphdatabase/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Neo4j</title>
+				<link>//localhost:1313/tags/neo4j/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/neo4j/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Python</title>
+				<link>//localhost:1313/tags/python/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/python/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>RAG</title>
+				<link>//localhost:1313/tags/rag/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/rag/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Interpreter</title>
+				<link>//localhost:1313/tags/interpreter/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/interpreter/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Memory-Management</title>
+				<link>//localhost:1313/tags/memory-management/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/memory-management/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Completed</title>
+				<link>//localhost:1313/tags/completed/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/completed/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>In</title>
+				<link>//localhost:1313/tags/in/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/in/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>In-Progress</title>
+				<link>//localhost:1313/tags/in-progress/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/tags/in-progress/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

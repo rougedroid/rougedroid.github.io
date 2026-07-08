@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Categories on The Logbook</title>
+		<link>//localhost:1313/categories/</link>
+		<description>Recent content in Categories on The Logbook</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Delayed</title>
+				<link>//localhost:1313/categories/delayed/</link>
+				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/delayed/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Product</title>
+				<link>//localhost:1313/categories/product/</link>
+				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/product/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Programming</title>
+				<link>//localhost:1313/categories/programming/</link>
+				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/programming/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Completed</title>
+				<link>//localhost:1313/categories/completed/</link>
+				<pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/completed/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Learning</title>
+				<link>//localhost:1313/categories/learning/</link>
+				<pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/learning/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>In-Progress</title>
+				<link>//localhost:1313/categories/in-progress/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/in-progress/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Abandoned</title>
+				<link>//localhost:1313/categories/abandoned/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/abandoned/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Aban</title>
+				<link>//localhost:1313/categories/aban/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/categories/aban/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

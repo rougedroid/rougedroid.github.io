@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>The Logbook</title>
+		<link>//localhost:1313/</link>
+		<description>Recent content on The Logbook</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 16 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Custom Compiler-VM Bundle</title>
+				<link>//localhost:1313/projects/compiler-vm/</link>
+				<pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/compiler-vm/</guid>
+				<description>This project page looks at some of the technical details regarding my implementation of a custom compiler and a VM for a simple, custom ISA. The project is built in C and the vm follows a von Neumann Architecture and is register based.</description>
+			</item>
+			<item>
+				<title>Financial Data Pipeline &amp; Ingestion Engine</title>
+				<link>//localhost:1313/projects/tickerfacts/</link>
+				<pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/tickerfacts/</guid>
+				<description>This project page looks at some of the technical details regarding my implementation of a custom compiler and a VM for a simple, custom ISA. The project is built in C and the vm follows a von Neumann Architecture and is register based.</description>
+			</item>
+			<item>
+				<title>Rudimentary Interpreter</title>
+				<link>//localhost:1313/projects/ast-implementation/</link>
+				<pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/ast-implementation/</guid>
+				<description>This project page documents my standalone exploration into Abstract Syntax Trees (ASTs) in C. Built as a rapid prototyping sandbox, this repository was where I figured out how to construct dynamic trees for mathematical expressions and translate them into assembly-like instructions before implementing the final architecture in my compiler.</description>
+			</item>
+			<item>
+				<title>Project Stark</title>
+				<link>//localhost:1313/projects/projectstark/</link>
+				<pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/projectstark/</guid>
+				<description>This project outlines a modular, multi-model AI system designed to automate PDF ingestion, semantic segmentation, and graph-based knowledge retrieval using specialized, lightweight ML components and a local LLM. Currently, the project is in its early stages with a partially functional Node Finder built on top of a common sense knowledge graph.</description>
+			</item>
+			<item>
+				<title>Custom malloc Implementation</title>
+				<link>//localhost:1313/projects/my-malloc/</link>
+				<pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/my-malloc/</guid>
+				<description>This project page details a functional, custom implementation of the dynamic memory allocation functions my_malloc and my_free built in C. The allocator directly requests memory from the kernel using anonymous memory mappings (mmap) and manages allocated blocks via a sequential, padded linked-list metadata tracking system.</description>
+			</item>
+			<item>
+				<title>Rudimentary Interpreter</title>
+				<link>//localhost:1313/projects/rudimentary-interpreter/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/rudimentary-interpreter/</guid>
+				<description>This project page details my initial, highly experimental attempt at building a rudimentary interpreter from scratch in C. Designed as a foundational learning experiment to understand the mechanics of parsing and execution, this project served as a critical stepping stone—and a masterclass in architectural mistakes—before the development of my subsequent, fully functional compiler.</description>
+			</item>
+			<item>
+				<title>Resume</title>
+				<link>//localhost:1313/resume/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/resume/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

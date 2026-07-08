@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Aban on The Logbook</title>
+		<link>//localhost:1313/categories/aban/</link>
+		<description>Recent content in Aban on The Logbook</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/categories/aban/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Custom Compiler-VM Bundle</title>
+				<link>//localhost:1313/projects/rudimentary-interpreter/</link>
+				<pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/rudimentary-interpreter/</guid>
+				<description>This project page details my initial, highly experimental attempt at building a rudimentary interpreter from scratch in C. Designed as a foundational learning experiment to understand the mechanics of parsing and execution, this project served as a critical stepping stone—and a masterclass in architectural mistakes—before the development of my subsequent, fully functional compiler.</description>
+			</item>
+	</channel>
+</rss>

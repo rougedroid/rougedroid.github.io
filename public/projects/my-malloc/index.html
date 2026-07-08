@@ -1,0 +1,493 @@
+
+
+
+
+
+
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFFFFF" />
+  
+  <title>Custom malloc Implementation &middot; The Logbook</title>
+    <meta name="title" content="Custom malloc Implementation &middot; The Logbook" />
+  
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="//localhost:1313/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js"
+    integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="
+  ></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="//localhost:1313/css/main.bundle.min.77a79972dfd1fba3e37eaab972e5cf479aea24376fc39d827f5760735ebc834e.css"
+    integrity="sha256-d6eZct/R&#43;6Pjfqq5cuXPR5rqJDdvw52Cf1dgc168g04="
+  />
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="//localhost:1313/js/main.bundle.min.0221623774b4ffae62d33aaf8aa954618227c122f904ee05c0e6ded32c9ea373.js"
+      integrity="sha256-AiFiN3S0/65i0zqviqlUYYInwSL5BO4FwObe0yyeo3M="
+      data-copy="Copy"
+      data-copied="Copied"
+    ></script>
+  
+  
+  <meta
+    name="description"
+    content="
+      This project page details a functional, custom implementation of the dynamic memory allocation functions my_malloc and my_free built in C. The allocator directly requests memory from the kernel using anonymous memory mappings (mmap) and manages allocated blocks via a sequential, padded linked-list metadata tracking system.
+    "
+  />
+  
+  
+  
+  
+    <link rel="canonical" href="//localhost:1313/projects/my-malloc/" />
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="//localhost:1313/projects/my-malloc/">
+	<meta property="og:site_name" content="The Logbook">
+	<meta property="og:title" content="Custom malloc Implementation">
+	<meta property="og:description" content="This project page details a functional, custom implementation of the dynamic memory allocation functions my_malloc and my_free built in C. The allocator directly requests memory from the kernel using anonymous memory mappings (mmap) and manages allocated blocks via a sequential, padded linked-list metadata tracking system.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="projects">
+		<meta property="article:published_time" content="2026-05-27T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-05-27T00:00:00+00:00">
+		<meta property="article:tag" content="C">
+		<meta property="article:tag" content="Low-Level">
+		<meta property="article:tag" content="Memory-Management">
+
+  
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Custom malloc Implementation">
+	<meta name="twitter:description" content="This project page details a functional, custom implementation of the dynamic memory allocation functions my_malloc and my_free built in C. The allocator directly requests memory from the kernel using anonymous memory mappings (mmap) and manages allocated blocks via a sequential, padded linked-list metadata tracking system.">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Projects",
+    "name": "Custom malloc Implementation",
+    "headline": "Custom malloc Implementation",
+    "description": "This project page details a functional, custom implementation of the dynamic memory allocation functions my_malloc and my_free built in C. The allocator directly requests memory from the kernel using anonymous memory mappings (mmap) and manages allocated blocks via a sequential, padded linked-list metadata tracking system.",
+    "abstract": "This project page details a functional, custom implementation of the dynamic memory allocation functions my_malloc and my_free built in C. The allocator directly requests memory from the kernel using anonymous memory mappings (mmap) and manages allocated blocks via a sequential, padded linked-list metadata tracking system.",
+    "inLanguage": "en",
+    "url" : "\/\/localhost:1313\/projects\/my-malloc\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Bhavan Sai Pasupuleti"
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-05-27T00:00:00\u002b00:00",
+    "datePublished": "2026-05-27T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-05-27T00:00:00\u002b00:00",
+    
+    "keywords": ["C","low-level","memory-management"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "461"
+  }
+  </script>
+    
+    <script type="application/ld+json">
+    {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "//localhost:1313/",
+       "name": "The Logbook",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "//localhost:1313/projects/",
+       "name": "Projects",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "//localhost:1313/categories/programming/",
+       "name": "Programming",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Custom Malloc Implementation",
+       "position": 4
+     }
+   ]
+ }
+  </script>
+
+  
+  
+    <meta name="author" content="Bhavan Sai Pasupuleti" />
+  
+  
+    
+      <link href="mailto:bhavan@tutamail.com" rel="me" />
+    
+      <link href="https://github.com/username" rel="me" />
+    
+      <link href="https://linkedin.com/in/username" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >The Logbook</a
+  >
+
+    </div>
+    
+    
+      <ul class="flex list-none flex-col text-end sm:flex-row">
+        
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/projects/"
+                  title="Projects"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Projects</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/posts/"
+                  title="Posts"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/categories/"
+                  title="Categories"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Categories</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/resume/"
+                  title="Resume"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Resume</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/tags/"
+                  title="Tags"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Tags</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                
+                
+                  <button
+                    id="search-button-1"
+                    title="Search (/)"
+                  >
+                    
+                      <span
+                        class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                      ><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                        class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                        ></span
+                      >
+                    
+                  </button>
+                
+              
+            </li>
+          
+            
+              
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex grow flex-col">
+      <main id="main-content" class="grow">
+        
+<article class="prose max-w-none dark:prose-invert">
+  <header class="mb-6">
+    <h1 class="text-4xl font-extrabold mb-2 text-neutral-900 dark:text-neutral">Custom malloc Implementation</h1>
+    
+      <p class="text-muted-foreground italic text-lg">This project page details a functional, custom implementation of the dynamic memory allocation functions my_malloc and my_free built in C. The allocator directly requests memory from the kernel using anonymous memory mappings (mmap) and manages allocated blocks via a sequential, padded linked-list metadata tracking system.</p>
+    
+  </header>
+
+  
+  
+
+  <section class="mt-6">
+    <h2 id="project-intent" class="relative group">Project Intent <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#project-intent" aria-label="Anchor">#</a></span></h2><ul>
+<li>Understand how memory allocation systems (<code>malloc</code>, <code>free</code>) map user-space requests to kernel-allocated memory blocks.</li>
+<li>Gain a deep understanding of memory alignment, block padding, and metadata overhead calculations in pure C.</li>
+<li>Implement a foundational block-splitting and chunk-coalescing mechanism to reuse freed memory spaces.</li>
+<li>Project has been deemed <strong>successful and complete</strong>, operating as a working barebones alternative to standard library allocators.</li>
+</ul>
+<h2 id="system-architecture" class="relative group">System Architecture <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#system-architecture" aria-label="Anchor">#</a></span></h2><h3 id="linked-list-metadata-tracking" class="relative group">Linked-List Metadata Tracking <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#linked-list-metadata-tracking" aria-label="Anchor">#</a></span></h3><p>The allocator tracks allocations linearly by embedding structural headers directly into the memory space immediately preceding the usable data pointer:</p>
+<ul>
+<li><strong>Block Header Setup:</strong> Each block begins with a 16-byte aligned <code>block_header_t</code> struct containing the block size, a boolean tracking its availability (<code>is_free</code>), and a pointer to the next block.</li>
+<li><strong>Kernel Mapping (<code>mmap</code>):</strong> Rather than adjusting the heap break pointer (<code>sbrk</code>), this implementation bypasses the standard heap pool entirely, requesting page-aligned maps directly via <code>mmap</code> with flags <code>MAP_PRIVATE | MAP_ANONYMOUS</code>.</li>
+<li><strong>Pointer Arithmetic Alignment:</strong> The user is always handed a data pointer offset by exactly <code>+1</code> block-header unit (16 bytes) past the metadata struct (<code>cblock + 1</code>).</li>
+</ul>
+<h3 id="performance--time-complexity" class="relative group">Performance &amp; Time Complexity <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#performance--time-complexity" aria-label="Anchor">#</a></span></h3><ul>
+<li><strong>Allocation / Deallocation Complexity:</strong> $\mathcal{O}(N)$. Finding a free slot or validating a block address requires iterating sequentially across the explicit <code>chain_length</code> list of nodes.</li>
+</ul>
+<h2 id="limitations" class="relative group">Limitations <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#limitations" aria-label="Anchor">#</a></span></h2><h3 id="performance-and-scale" class="relative group">Performance and Scale <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#performance-and-scale" aria-label="Anchor">#</a></span></h3><ul>
+<li><strong>$\mathcal{O}(N)$ Search Overhead:</strong> Because it utilizes a single continuous linked list, allocations must parse every previous block to locate an existing free chunk, which severely limits high-throughput scaling.</li>
+<li><strong>Brittle Pointer Stepping:</strong> The current logic increments blocks heavily through raw struct pointer offsets (e.g., <code>cblock + (reqsize / sizeof(*cblock))</code>), which can fall prey to subtle tracking bugs if the initial requested allocation size isn&rsquo;t a flawless multiple of the struct size.</li>
+</ul>
+<h3 id="fragment-cleanups" class="relative group">Fragment Cleanups <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#fragment-cleanups" aria-label="Anchor">#</a></span></h3><ul>
+<li><strong>Limited Coalescing Window:</strong> The current merging algorithm in <code>my_free</code> simplifies the coalescing phase by stepping forward over the tracked chain, but does not deeply collapse multiple non-contiguous free spaces or release completely empty pages back to the kernel using <code>munmap</code>.</li>
+</ul>
+<h2 id="project-outcomes" class="relative group">Project Outcomes <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#project-outcomes" aria-label="Anchor">#</a></span></h2><ul>
+<li>Successfully designed an working allocation layer in C that executes real memory binding without crashing standard operational systems.</li>
+<li>Decoded the intricate pointer math required to compute strict byte padding ($8 \times \frac{\text{rsize} + \text{sizeof(header)} + 7}{8}$).</li>
+<li>Understood how <code>malloc</code> payloads store their metadata silently &ldquo;behind&rdquo; the pointer returned to the developer.</li>
+<li>✘ Failed to implement standard memory-efficiency algorithms like segregated free lists, Best-Fit, or segregated buddy allocation systems.</li>
+</ul>
+<h2 id="future-plan" class="relative group">Future Plan <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#future-plan" aria-label="Anchor">#</a></span></h2><p>If I revisit low-level memory tracking, I will rewrite this allocator to utilize an asymmetric <strong>Segregated Free List</strong> structure backed by a balanced tree (like a Red-Black tree) to lower lookup bounds from $\mathcal{O}(N)$ to $\mathcal{O}(\log N)$.</p>
+<p>Additionally, I plan to integrate proper kernel page reclaiming via <code>munmap</code> so that when large, sequential blocks are freed, memory is immediately and systematically handed back to the OS.</p>
+<hr>
+<h2 id="repository" class="relative group">Repository <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#repository" aria-label="Anchor">#</a></span></h2><ol>
+<li><a href="https://github.com/rougedroid/My-Malloc-Implementation/" target="_blank" rel="noreferrer">https://github.com/rougedroid/My-Malloc-Implementation/</a></li>
+</ol>
+
+  </section>
+</article>
+
+      </main>
+      
+        <div
+          class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"
+          id="to-top"
+          hidden="true"
+        >
+          <a
+            href="#the-top"
+            class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+            aria-label="Scroll to top"
+            title="Scroll to top"
+          >
+            &uarr;
+          </a>
+        </div>
+      <footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2026
+            Bhavan Sai Pasupuleti
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    <div class="flex flex-row items-center">
+      
+      
+      
+      
+    </div>
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="//localhost:1313/"
+>
+  <div
+    id="search-modal"
+    class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex flex-none items-center justify-between px-2">
+      <form class="flex min-w-0 flex-auto items-center">
+        <div class="flex h-8 w-8 items-center justify-center text-neutral-400">
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto overflow-auto px-2">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>

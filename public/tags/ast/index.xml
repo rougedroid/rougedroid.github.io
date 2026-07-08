@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>AST on The Logbook</title>
+		<link>//localhost:1313/tags/ast/</link>
+		<description>Recent content in AST on The Logbook</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/tags/ast/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Rudimentary Interpreter</title>
+				<link>//localhost:1313/projects/ast-implementation/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/ast-implementation/</guid>
+				<description>This project page documents my standalone exploration into Abstract Syntax Trees (ASTs) in C. Built as a rapid prototyping sandbox, this repository was where I figured out how to construct dynamic trees for mathematical expressions and translate them into assembly-like instructions before implementing the final architecture in my compiler.</description>
+			</item>
+	</channel>
+</rss>

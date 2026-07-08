@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Delayed on The Logbook</title>
+		<link>//localhost:1313/categories/delayed/</link>
+		<description>Recent content in Delayed on The Logbook</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/categories/delayed/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Financial Data Pipeline &amp; Ingestion Engine</title>
+				<link>//localhost:1313/projects/tickerfacts/</link>
+				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/projects/tickerfacts/</guid>
+				<description>This project page covers the engineering details of a financial data backend built to ingest raw SEC filings and earnings metrics. The project evolved from a content-focused financial news concept into a heavy infrastructure-building exercise, utilizing AI generation for rapid backend assembly while the overall database design and API sync lagged behind.</description>
+			</item>
+	</channel>
+</rss>
