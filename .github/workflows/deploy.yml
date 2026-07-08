@@ -1,19 +1,24 @@
-name: Deploy Hugo site to Pages
+name: Deploy Hugo Site
 
 on:
   push:
     branches:
-      - main # Change this to 'master' if your default branch is named master
+      - main  # Change to "master" if your default branch uses it
+  workflow_dispatch: # Allows you to trigger the build manually from the Actions tab
 
+# Set permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# Default shell execution
 defaults:
   run:
     shell: bash
@@ -22,35 +27,54 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.125.0 # You can update this to match your local hugo version
+      HUGO_VERSION: 0.145.0 # Specify your preferred Hugo version here
     steps:
-      - name: Checkout
+      - name: Checkout Source
         uses: actions/checkout@v4
         with:
-          submodules: recursive # Crucial for fetching your Congo theme git submodule
+          # If you ever switch Congo from a Hugo Module to a Git Submodule, 
+          # setting submodules to true/recursive avoids empty theme builds.
+          submodules: false 
           fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22' # Required for Hugo Modules fetching dependencies
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
-          extended: true # Congo requires the extended version for Tailwind/SASS compilation
+          extended: true # Congo usually requires the extended version for SASS processing
+
+      - name: Cache Hugo Dependencies
+        uses: actions/cache@v4
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      - name: Install Hugo Modules Dependencies
+        run: hugo mod get -u
 
       - name: Build with Hugo
         env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-          HUGO_ENVIRONMENT: production
+          HUGO_CACHEDIR: /tmp/hugo_cache
+          # Automatically uses the correct production URL provided by GitHub Pages
+          HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
         run: |
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${{ env.HUGO_BASEURL }}"
 
-      - name: Upload artifact
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
