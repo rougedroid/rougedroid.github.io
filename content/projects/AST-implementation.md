@@ -1,5 +1,5 @@
 ---
-title: Rudimentary Interpreter
+title: AST Implementation
 date: 2026-06-12
 description: This project page documents my standalone exploration into Abstract Syntax Trees (ASTs) in C. Built as a rapid prototyping sandbox, this repository was where I figured out how to construct dynamic trees for mathematical expressions and translate them into assembly-like instructions before implementing the final architecture in my compiler.
 summary: This project page documents my standalone exploration into Abstract Syntax Trees (ASTs) in C. Built as a rapid prototyping sandbox, this repository was where I figured out how to construct dynamic trees for mathematical expressions and translate them into assembly-like instructions before implementing the final architecture in my compiler.
