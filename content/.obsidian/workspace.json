@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "resume.md",
+                "file": "projects/AST-implementation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "resume"
+              "title": "AST-implementation"
             }
           }
         ],
@@ -214,6 +214,7 @@
   },
   "active": "1eaf1b8f7fc5edb9",
   "lastOpenFiles": [
+    "resume.md",
     "projects/ProjectStark/index.md",
     "projects/AST-implementation.md",
     "projects/compiler-vm.md",
@@ -221,7 +222,6 @@
     "projects/rudimentary-interpreter.md",
     "projects/tickerfacts.md",
     "projects/_index.md",
-    "posts/blog-post-1.md",
-    "resume.md"
+    "posts/blog-post-1.md"
   ]
 }
