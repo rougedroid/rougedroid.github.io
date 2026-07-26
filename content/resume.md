@@ -1,7 +1,6 @@
 ---
 title: "Resume"
 ---
-# THE RESUME
 
 **Bhavan Sai Pasupuleti** | [[bhavan@tutamail.com](mailto:bhavan@tutamail.com)] | [[github.com/rougedroid](https://github.com/yourusername)] | [[linkedin.com/in/bhavan-sai-pasupuleti](https://www.google.com/search?q=https://linkedin.com/in/bhavan-sai-pasupuleti)]
 

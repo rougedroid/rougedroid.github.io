@@ -15,8 +15,8 @@ title = "The Logbook"
 [params.author]
    name = "Bhavan Sai Pasupuleti"
    image = "img/author.png"
-   headline = "sm not so random dude"
-  #bio = "A lisdfssfhhhhhhh hhh hhh h  hhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhh dttle bitlmaoooodfdfdsdt me!?"
+   headline = "Freshmore @ Plaksha Uni ; Electronics Systems Engineer ; Cyber Sec Hobbyist"
+# bio = "A lisdfssfhhhhhhh hhh hhh h  hhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhh dttle bitlmaoooodfdfdsdt me!?"
    links = [
      { email = "mailto:bhavan@tutamail.com" },
   #   { link = "https://link-to-some-website.com/" },
