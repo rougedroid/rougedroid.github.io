@@ -4,11 +4,14 @@ date: 2026-07-26
 publishdate: 2026-07-26
 ---
 After the failed interpreter and then swiftly following it with a brutal JEE, I started work on my compiler on the 3rd of June, this time more determined and armed with the knowledge of a failed interpreter and having built a custom VM from scratch.
+<div style="border-left: 3px solid #7c3aed; padding-left: 1rem; margin: 1.5rem 0;">
 
-> [!Context]
-> Work on the VM was started on 27th May. This basic VM uses a Von Neumann architecture, and it was built for logic testing, rather than a real simulation. And hence, it lacks clock cycles and actual microprocessor-like processing.  
-> The VM has a "RAM" of 131kB and executes a custom 16-bit instruction set.  
-> Other instructions can be found on the related [project page](https://rougedroid.github.io/projects/compiler-vm/).
+<b>Context</b> <br>
+Work on the VM was started on 27th May. <br>
+This basic VM uses a Von Neumann architecture, and it was built for logic testing, rather than a real simulation. And hence, it lacks clock cycles and actual microprocessor-like processing.<br>
+The VM has a "RAM" of 131kB and executes a custom 16-bit instruction set. Other instructions can be found on the related  <a href= "https://rougedroid.github.io/projects/compiler-vm/"> project page </a>. 
+
+</div>
 
 #### Remnants of the past
 

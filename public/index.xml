@@ -10,15 +10,29 @@
 		
 		
 		
-			<lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sun, 26 Jul 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Story of a Comeback : The working Compiler in C</title>
+				<link>http://localhost:1313/posts/blog-post-2/</link>
+				<pubDate>Sun, 26 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/blog-post-2/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Financial Data Pipeline &amp; Ingestion Engine</title>
 				<link>http://localhost:1313/projects/tickerfacts/</link>
 				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/projects/tickerfacts/</guid>
 				<description>This project page covers the engineering details of a financial data backend built to ingest raw SEC filings and earnings metrics. The project evolved from a content-focused financial news concept into a heavy infrastructure-building exercise, utilizing AI generation for rapid backend assembly while the overall database design and API sync lagged behind.</description>
+			</item>
+			<item>
+				<title>Building, Breaking, and Learning: What My Failed C Interpreter Taught Me</title>
+				<link>http://localhost:1313/posts/blog-post-1/</link>
+				<pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/blog-post-1/</guid>
+				<description></description>
 			</item>
 			<item>
 				<title>Custom Compiler-VM Bundle</title>
