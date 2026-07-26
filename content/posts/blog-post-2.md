@@ -8,7 +8,7 @@ After the failed interpreter and then swiftly following it with a brutal JEE, I 
 > [!Context]
 > Work on the VM was started on 27th May. This basic VM uses a Von Neumann architecture, and it was built for logic testing, rather than a real simulation. And hence, it lacks clock cycles and actual microprocessor-like processing.  
 > The VM has a "RAM" of 131kB and executes a custom 16-bit instruction set.  
-> Other instructions can be found on the related project page.
+> Other instructions can be found on the related [project page](https://rougedroid.github.io/projects/compiler-vm/).
 
 #### Remnants of the past
 
