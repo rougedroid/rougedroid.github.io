@@ -1,8 +1,7 @@
 ---
-title: "Building, Breaking, and Learning: What My Failed C Interpreter Taught Me
-"
+title: "Building, Breaking, and Learning: What My Failed C Interpreter Taught Me"
 date: 2026-06-16
-publishdate: 2034-07-09
+publishdate: 2026-07-03
 ---
 
 We’ve all been there. You want to understand how programming languages actually work, so you sit down, open a blank text editor, fire up GCC, and decide to write an interpreter in pure C. You think, _"How hard can it be? It’s just reading strings and executing them."_ It turns out, if you don’t know what you’re doing, it gets messy _very_ fast.
